@@ -7,6 +7,8 @@ import { FooterComponent } from './footer/footer.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   {path: 'footer', component: FooterComponent},
   {path: 'news', component: NewsComponent},
   {path: 'offers', component: OffersComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: SignupComponent}
 ];
 
 @NgModule({

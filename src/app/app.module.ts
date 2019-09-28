@@ -20,6 +20,8 @@ import { AboutComponent } from './about/about.component';
 import { NewsComponent } from './news/news.component';
 import { OffersComponent } from './offers/offers.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     NewsComponent,
     OffersComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
