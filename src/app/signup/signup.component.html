@@ -12,7 +12,7 @@
                                 name="firstname"
                                 ngModel
                                 placeholder="First Name"
-                                #fname= "ngModel" required email>
+                                #fname= "ngModel" required firstname>
                         <mat-error *ngIf="fname.invalid">Please Enter your first name!</mat-error>
                 </mat-form-field> <br>
                    
@@ -22,7 +22,7 @@
                                     name="lastname"
                                     ngModel
                                     placeholder="Last Name"
-                                    #lname= "ngModel" required email>
+                                    #lname= "ngModel" required lastname>
                             <mat-error *ngIf="lname.invalid">Please Enter your last name</mat-error>
                 </mat-form-field> <br>
                 <mat-form-field>
@@ -40,7 +40,7 @@
                         name="password"
                         ngModel
                         placeholder="Password"
-                        #pass= "ngModel" required email>
+                        #pass= "ngModel" required password>
                 <mat-error *ngIf="pass.invalid">PLease Enter Your Password!</mat-error>
                 </mat-form-field> <br>   
                 <mat-form-field>
@@ -49,7 +49,7 @@
                         name="confirmpassword"
                         ngModel
                         placeholder="Confirm Password"
-                        #cpass= "ngModel" required email>
+                        #cpass= "ngModel" required confirmpassword>
                 <mat-error *ngIf="cpass.invalid">PLease Enter correct Password!</mat-error>
                 </mat-form-field> <br>  
 
