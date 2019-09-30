@@ -10,8 +10,21 @@
 
 6. run "ng serve" in the parent directory of this folder
 
-7. cd backend //to go to backend part
+7. open https://localhost:4200
 
-8. run "node index,js" in /backend directory,this will run the backend 
 
-9. open https://localhost:4200
+
+
+FOR BACKEND PART
+
+1. cd backend //to go to backend part
+
+ Perform the below steps in backend folder only
+
+2. run npm install
+
+3. npm install --save mongodb && mongoCompass
+
+4. npm start
+
+5. open https://localhost:3000

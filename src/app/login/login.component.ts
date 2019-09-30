@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
 
   LoginForm(form: NgForm) {
-
+    
   }
 
 }
