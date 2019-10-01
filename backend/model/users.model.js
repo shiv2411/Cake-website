@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const uniqueValidator = require("mongoose-unique-validator");
 
-const schema = new Schema({
+
+const schema = mongoose.Schema({
     email: { type: String, unique: true, required: true },
     hash: { type: String, required: true },
     firstName: { type: String, required: true },
@@ -9,6 +10,7 @@ const schema = new Schema({
     createdDate: { type: Date, default: Date.now }
 });
 
-schema.set('toJSON', { virtuals: true });
+// schema.set('toJSON', { virtuals: true });
+schema.plugin(uniqueValidator);
 
-module.exports = mongoose.model('User', schema,'users');
+module.exports = mongoose.model('User', schema);

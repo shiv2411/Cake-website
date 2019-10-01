@@ -35,7 +35,7 @@ export class AuthService {
   createUser(fname: string, lname: string, emal: string, pass: string, cpass: string) {
     const authData: SignupData = { firstname: fname, lastname: lname, email: emal, password: pass, cpassword: cpass };
     this.http
-      .post('http://localhost:3000/register', authData)
+      .post('http://localhost:3000/api/user/register', authData)
       .subscribe(() => {
         this.router.navigate(['/']);
       }, error => {
@@ -47,7 +47,7 @@ export class AuthService {
     const authData: LoginData = { email: emal, password: pass };
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
-        'http://localhost:3000/auth',
+        'http://localhost:3000/api/user/auth',
         authData
       )
       .subscribe(response => {

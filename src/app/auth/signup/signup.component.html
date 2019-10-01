@@ -12,7 +12,7 @@
                                 name="firstname"
                                 ngModel
                                 placeholder="First Name"
-                                #fname= "ngModel" required firstname>
+                                #fname= "ngModel" required>
                         <mat-error *ngIf="fname.invalid">Please Enter your first name!</mat-error>
                 </mat-form-field> <br>
                    
@@ -22,7 +22,7 @@
                                     name="lastname"
                                     ngModel
                                     placeholder="Last Name"
-                                    #lname= "ngModel" required lastname>
+                                    #lname= "ngModel" required>
                             <mat-error *ngIf="lname.invalid">Please Enter your last name</mat-error>
                 </mat-form-field> <br>
                 <mat-form-field>
@@ -40,8 +40,8 @@
                         name="password"
                         ngModel
                         placeholder="Password"
-                        #pass= "ngModel" required password>
-                <mat-error *ngIf="pass.invalid">PLease Enter Your Password!</mat-error>
+                        #pass= "ngModel" required>
+                <mat-error *ngIf="pass.invalid">Please Enter Your Password!</mat-error>
                 </mat-form-field> <br>   
                 <mat-form-field>
                 <input type="password"
@@ -49,8 +49,8 @@
                         name="confirmpassword"
                         ngModel
                         placeholder="Confirm Password"
-                        #cpass= "ngModel" required confirmpassword>
-                <mat-error *ngIf="cpass.invalid">PLease Enter correct Password!</mat-error>
+                        #cpass= "ngModel" required>
+                <mat-error *ngIf="cpass.invalid">Please Enter correct Password!</mat-error>
                 </mat-form-field> <br>  
 
             <span style="margin-left:120px;font-size: 14px;">Already have an account? Sign in by clicking  
