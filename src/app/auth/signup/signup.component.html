@@ -5,7 +5,7 @@
         Register / Signin
       </mat-card-title>
   <mat-card class="innercard">
-        <form (ngSubmit)="LoginForm(SignupForm)" #SignupForm="ngForm">
+        <form (ngSubmit)="onSignup(SignupForm)" #SignupForm="ngForm">
                 <mat-form-field>
                         <input type="text"
                                 matInput
@@ -63,4 +63,4 @@
   </mat-card>
 </mat-card>
 
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->

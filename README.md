@@ -25,6 +25,6 @@ FOR BACKEND PART
 
 3. npm install --save mongodb && mongoCompass
 
-4. npm start
+4. node app.js
 
 5. open https://localhost:3000

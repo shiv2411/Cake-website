@@ -8,7 +8,7 @@ const schema = new Schema({
 	Shape: { type: String },
     Name: { type: String },
     Price: { type: String },
-    image: { type: String },
+    Image: { type: String },
     createdDate: { type: Date, default: Date.now }
 });
 

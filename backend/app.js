@@ -19,24 +19,39 @@ app.listen("3000", () => {
     console.log("Server started");
 }
 );
-app.use('/news', require('./news/news.controller'));
-app.use('/offers', require('./offers/offers.controller'));
-app.use('/cakes', require('./cakes/cakes.controller'));
+app.use('/news', require('./controllers/news.controller'));
+app.use('/offers', require('./controllers/offers.controller'));
+app.use('/cakes', require('./controllers/cakes.controller'));
 app.use(session({
     secret: 'k344kk44k4k4h44',
     resave: true,
     saveUninitialized: true
 }));
 
-app.get("/", (req, res) => {
-    res.sendFile('index.html', { root: __dirname })
-})
-app.get("/register.html", (req, res) => {
-    res.sendFile('register.html', { root: __dirname })
-})
-app.get("/login.html", (req, res) => {
-    res.sendFile('login.html', { root: __dirname })
-})
+//Setting Headers for CORS purpose
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+    );
+    next();
+  });
+
+
+// app.get("/", (req, res) => {
+//     res.sendFile('index.html', { root: __dirname })
+// })
+// app.get("/register.html", (req, res) => {
+//     res.sendFile('register.html', { root: __dirname })
+// })
+// app.get("/login.html", (req, res) => {
+//     res.sendFile('login.html', { root: __dirname })
+// })
 
 
 app.post("/register", (req, res) => {
@@ -52,7 +67,7 @@ app.post("/register", (req, res) => {
 
 })
 
-/*app.post("/newsregister", (req, res) => {
+app.post("/newsregister", (req, res) => {
     console.log(req.body);
     var news = new NewsModel();
     news.Heading = req.body.heading;
@@ -62,7 +77,7 @@ app.post("/register", (req, res) => {
    news.save();
     res.send("News Registered Successfully");
 
-})*/
+})
 
 app.post("/categoryregister", (req, res) => {
     console.log(req.body);
