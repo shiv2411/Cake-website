@@ -15,6 +15,10 @@ import { OurcakesComponent } from './ourcakes/ourcakes.component';
 import { SpecialcakesComponent } from './specialcakes/specialcakes.component';
 import { FootballcakesComponent } from './sportscakes/footballcakes/footballcakes.component';
 import { GymcakesComponent } from './sportscakes/gymcakes/gymcakes.component';
+import { AllcakesComponent } from './specialcakes/all_sports/all_sports.component';
+import { BabyshowerComponent } from './ourcakes/baby_shower/baby_shower.component';
+import { SuperheroescakesComponent } from './birthdaycakes/superheroes/super.component';
+import { CakeformComponent } from './cakeform/cakeform.component';
 
 
 const routes: Routes = [
@@ -27,10 +31,14 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
+  {path: 'cakeform', component: CakeformComponent},
   {path: 'birthdaycakes', component: BirthdaycakesComponent},
+  {path: 'birthdaycakes/superheroes', component: SuperheroescakesComponent},
   {path: 'sportscakes', component: SportscakesComponent},
   {path: 'ourcakes', component: OurcakesComponent},
+  {path: 'ourcakes/baby_shower', component: BabyshowerComponent},
   {path: 'specialcakes', component: SpecialcakesComponent},
+  {path: 'specialcakes/all_sports', component: AllcakesComponent},
   {path: 'sportscakes/gymcakes', component: GymcakesComponent},
   {path: 'sportscakes/footballcakes', component: FootballcakesComponent}
 ];

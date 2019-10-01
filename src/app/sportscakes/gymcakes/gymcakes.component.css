@@ -4,6 +4,9 @@
     width: 75%;
     margin: auto;
 }
+.crd h3{
+    padding: 30px 20px 20px 20px;
+}
 
 .card{
     margin-left:2%;
@@ -11,8 +14,6 @@
     margin-bottom: 2%;
    
 }
-
-
 
     div.card-group.b{
 margin: auto;
@@ -26,3 +27,9 @@ margin: auto;
 .card-footer{
     font-family: Alice-Regular;
 }
+.desc{
+    padding: 10px 40px 40px 40px;
+    color: black;
+
+}
+
