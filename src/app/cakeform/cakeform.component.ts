@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { CakeformData } from './cakeform.model';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FirebaseService } from '../angularfire.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-cakeform',
   templateUrl: './cakeform.component.html',
   styleUrls: ['./cakeform.component.css']
 })
@@ -10,16 +14,33 @@ export class CakeformComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
+  // public cakedetails: Array<any> = [];
 
-  constructor(private formBuilder: FormBuilder) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-      this.registerForm = this.formBuilder.group({
-        //   firstName: ['', Validators.required],
-        //   lastName: ['', Validators.required],
-        //   email: ['', [Validators.required, Validators.email]],
-        //   password: ['', [Validators.required, Validators.minLength(6)]]
-      });
+  constructor(private formBuilder: FormBuilder,
+              public af: AngularFirestore,
+              public firebaseService: FirebaseService,
+              private fb: FormBuilder,
+              public router: Router) {}
+
+
+  processForm(form: NgForm) {
+    if (form.valid) {
+        const data: CakeformData = {
+            size: form.value.size,
+            spongetype: form.value.spongetype,
+            cream: form.value.cream,
+            egg_or_eggless: form.value.egg_or_eggless,
+            cake_filler: form.value.cake_filler,
+            message: form.value.message,
+            message_color: form.value.message_color
+        };
+        this.firebaseService.addmessage(data).then(res => {
+            form.reset();
+          });
+    }
+    this.router.navigate(['/']);
   }
 
   // convenience getter for easy access to form fields

@@ -33,6 +33,13 @@ import { BabyshowerComponent } from './ourcakes/baby_shower/baby_shower.componen
 import { SuperheroescakesComponent } from './birthdaycakes/superheroes/super.component';
 import { CakeformComponent } from './cakeform/cakeform.component';
 
+
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +76,11 @@ import { CakeformComponent } from './cakeform/cakeform.component';
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebase),
+      AngularFireAuthModule,
+      AngularFirestoreModule,
+      AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
