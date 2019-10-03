@@ -39,8 +39,8 @@ export class AuthService {
     .set('fname', fname)
     .set('lname', lname)
     .set('email', email)
-    .set('password', pass)
-      this.http
+    .set('password', pass);
+    this.http
       .post('http://localhost:3000/api/user/register', payload)
       .subscribe(() => {
         this.router.navigate(['/']);
@@ -53,12 +53,10 @@ export class AuthService {
     // const authData: LoginData = { email: emal, password: pass };
     const payload = new HttpParams()
     .set('email', emal)
-    .set('password', pass)
+    .set('password', pass);
     this.http
-      .post<{ token: string; expiresIn: number; userId: string }>(
-        'http://localhost:3000/api/user/login',
-        payload
-      )
+      .post<{ token: string; expiresIn: number; }>(
+        'http://localhost:3000/api/user/login', payload)
       .subscribe(response => {
         const token = response.token;
         this.token = token;
@@ -66,14 +64,14 @@ export class AuthService {
           const expiresInDuration = response.expiresIn;
           this.setAuthTimer(expiresInDuration);
           this.isAuthenticated = true;
-          this.userId = response.userId;
+          // this.userId = response.userId;
           this.authStatusListener.next(true);
           const now = new Date();
           const expirationDate = new Date(
             now.getTime() + expiresInDuration * 1000
           );
           console.log(expirationDate);
-          this.saveAuthData(token, expirationDate, this.userId);
+          this.saveAuthData(token, expirationDate);
           this.router.navigate(['/']);
         }
       }, error => {
@@ -114,10 +112,10 @@ export class AuthService {
     }, duration * 1000);
   }
 
-  private saveAuthData(token: string, expirationDate: Date, userId: string) {
+  private saveAuthData(token: string, expirationDate: Date) {
     localStorage.setItem('token', token);
     localStorage.setItem('expiration', expirationDate.toISOString());
-    localStorage.setItem('userId', userId);
+    // localStorage.setItem('userId', userId);
   }
 
   private clearAuthData() {

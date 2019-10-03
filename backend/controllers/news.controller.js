@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const NewsModel = mongoose.model("News");
 const News = connection.News;
+
 // routes
 router.post('/newsregister', app.post("/newsregister", (req, res) => {
     console.log(req.body);

@@ -19,6 +19,8 @@ import { AllcakesComponent } from './specialcakes/all_sports/all_sports.componen
 import { BabyshowerComponent } from './ourcakes/baby_shower/baby_shower.component';
 import { SuperheroescakesComponent } from './birthdaycakes/superheroes/super.component';
 import { CakeformComponent } from './cakeform/cakeform.component';
+import { AdminComponent } from './admin/admin.component';
+import { NewsregComponent } from './newsregister/newsreg.component';
 
 
 const routes: Routes = [
@@ -27,11 +29,13 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'news', component: NewsComponent},
+  {path: 'newsregform', component: NewsregComponent},
   {path: 'offers', component: OffersComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
   {path: 'cakeform', component: CakeformComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'birthdaycakes', component: BirthdaycakesComponent},
   {path: 'birthdaycakes/superheroes', component: SuperheroescakesComponent},
   {path: 'sportscakes', component: SportscakesComponent},

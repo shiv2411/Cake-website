@@ -90,8 +90,6 @@ router.post('/delete/:id', app.post("/delete/:id", (req, res) => {
         else {
             res.status(200).send("Deleted Succesfully");
         }
-       
-
-}
+    }
 )
 }))

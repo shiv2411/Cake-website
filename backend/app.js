@@ -2,7 +2,7 @@ const connection = require("./model");
 var session = require('express-session');
 const express = require("express");
 const path = require("path");
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); 
 const bodyParser = require('body-parser');
 const app = express();
 const UserModel = mongoose.model("User");
@@ -10,6 +10,7 @@ const NewsModel = mongoose.model("News");
 const CategoryModel = mongoose.model("Category");
 const errorHandler = require('./helpers/error-handlers');
 var cors = require('cors');
+
 app.use(cors({
   Origin:'http://localhost:4200/'
 }));

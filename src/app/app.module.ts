@@ -39,6 +39,8 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from 'src/environments/environment';
+import { AdminComponent } from './admin/admin.component';
+import { NewsregComponent } from './newsregister/newsreg.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { environment } from 'src/environments/environment';
     ContactComponent,
     LoginComponent,
     SignupComponent,
+    AdminComponent,
+    NewsregComponent,
     BirthdaycakesComponent,
     SportscakesComponent,
     OurcakesComponent,
