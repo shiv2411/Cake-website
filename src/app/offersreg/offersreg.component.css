@@ -32,9 +32,6 @@
     form {
       font-size: 16px;
     }
-    /* .butn{
-       padding-left: 80px; 
-    } */
     .butn button{
       background-color: rgb(119, 202, 113);
       color: antiquewhite;
@@ -42,16 +39,5 @@
     div{
       margin-left: 100px;
     }
-    /* input[type="file"]{
-      visibility: hidden;
-    } */
-    /* .image-preview{
-      height :5rem;
-      margin: 1rem 0;
-    }
-    .image-preview img{
-      height: 100%;
-    }
-    
-     */
+   
     

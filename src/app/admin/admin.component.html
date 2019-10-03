@@ -4,13 +4,14 @@
 
         <div class="offer">        
             MANAGE OFFERS <br>
-            <!-- <a routerLInk="http://localhost:3000/"> -->
-                <button mat-raised-button (onclick)="OffersRegister();">Offers</button> <br> <br>
+            <a routerLink="/admin/offersreg">
+                <button mat-raised-button (onclick)="OffersRegister();">Offers</button>
+            </a> <br> <br>
         </div>
 
         <div class="news">
             ADD OR EDIT NEWS <br>
-            <a routerLink="/newsregform">
+            <a routerLink="/admin/newsregform">
                   <button mat-raised-button (onclick)="NewsRegister();">News</button>
             </a> <br> <br>
         </div>
@@ -23,9 +24,17 @@
 
         <div class="cakes">
             ADD CAKES <br>
-            <!-- <a routeLink="http://localhost:3000/"> -->
-                <button mat-raised-button (onclick)="CakesRegister();">Add cakes</button><br> <br>
+            <a routerLink="/admin/cakecatreg">
+                <button mat-raised-button (onclick)="CakesRegister();">Category's cake</button>
+        </a><br> <br>
         </div>
+
+        <div class="cakes">
+                ADD CAKES <br>
+                <a routerLink="/admin/cakereg">
+                    <button mat-raised-button (onclick)="CakesRegister();">Add cake</button>
+            </a><br> <br>
+            </div>
 
     </div>
 </body>

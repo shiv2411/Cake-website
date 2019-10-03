@@ -21,6 +21,9 @@ import { SuperheroescakesComponent } from './birthdaycakes/superheroes/super.com
 import { CakeformComponent } from './cakeform/cakeform.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewsregComponent } from './newsregister/newsreg.component';
+import { CakescategoryregComponent } from './cakecategory/cakecategoryreg.component';
+import { OffersregComponent } from './offersreg/offersreg.component';
+import { CakesregComponent } from './cakereg/cakereg.component';
 
 
 const routes: Routes = [
@@ -29,13 +32,16 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'news', component: NewsComponent},
-  {path: 'newsregform', component: NewsregComponent},
   {path: 'offers', component: OffersComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
   {path: 'cakeform', component: CakeformComponent},
   {path: 'admin', component: AdminComponent},
+  {path: 'admin/cakecatreg', component: CakescategoryregComponent},
+  {path: 'admin/newsregform', component: NewsregComponent},
+  {path: 'admin/offersreg', component: OffersregComponent},
+  {path: 'admin/cakereg', component: CakesregComponent},
   {path: 'birthdaycakes', component: BirthdaycakesComponent},
   {path: 'birthdaycakes/superheroes', component: SuperheroescakesComponent},
   {path: 'sportscakes', component: SportscakesComponent},

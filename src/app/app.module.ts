@@ -41,6 +41,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from 'src/environments/environment';
 import { AdminComponent } from './admin/admin.component';
 import { NewsregComponent } from './newsregister/newsreg.component';
+import { CakescategoryregComponent } from './cakecategory/cakecategoryreg.component';
+import { OffersregComponent } from './offersreg/offersreg.component';
+import { CakesregComponent } from './cakereg/cakereg.component';
 
 @NgModule({
   declarations: [
@@ -55,17 +58,20 @@ import { NewsregComponent } from './newsregister/newsreg.component';
     LoginComponent,
     SignupComponent,
     AdminComponent,
-    NewsregComponent,
     BirthdaycakesComponent,
     SportscakesComponent,
     OurcakesComponent,
+    AllcakesComponent,
     SpecialcakesComponent,
     CakeformComponent,
     GymcakesComponent,
     FootballcakesComponent,
-    AllcakesComponent,
     BabyshowerComponent,
-    SuperheroescakesComponent
+    SuperheroescakesComponent,
+    OffersregComponent,
+    NewsregComponent,
+    CakescategoryregComponent,
+    CakesregComponent
   ],
   imports: [
     BrowserModule,
