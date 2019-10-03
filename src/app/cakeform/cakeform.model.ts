@@ -6,4 +6,7 @@ export interface CakeformData {
     cake_filler: string;
     message: string;
     message_color: string;
+    first_name: string;
+    email_ID: string;
+    mobile_number: number;
   }

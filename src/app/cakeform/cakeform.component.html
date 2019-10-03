@@ -102,8 +102,41 @@
       <option value="green">Green</option>
     </select>
   </div>
+
+  <div class="row" style="margin-top: 5%;">
+      <label for="textInput">How can we contact you?</label>
+      <h6>Your Full name</h6>
+        <input type="text" 
+                style="width:800px;border:1px solid black;" 
+                name="fullname"
+                matInput
+                ngModel  
+                #fname= "ngModel">
+    </div> 
   
-<br> <br>
+    <div class="row" style="margin-top: 5%;">
+      <label for="textInput">Your Mobile number</label>
+    <input type="number" 
+                style="width:800px;border:1px solid black;" 
+                name="mno"
+                matInput
+                ngModel  
+                #mno= "ngModel"
+                onKeyPress="if(this.value.length==10) return false;">
+    </div>
+  
+    <div class="row" style="margin-top: 5%;">
+      <label for="textInput">Your email ID</label>
+    <input type="email" 
+                style="width:800px;border:1px solid black;" 
+                name="email"
+                matInput
+                ngModel  
+                #email= "ngModel">
+    </div>
+    
+  <br> <br>
+
 <!-- <input type="submit" value="Send"> -->
       <button mat-raised-button color="primary" class="btn btn-info btn-block" type="submit" style="margin-top: 5%;width:25%;margin:auto;" value="Send">Submit</button>
     </form>

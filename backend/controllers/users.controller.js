@@ -68,19 +68,23 @@ exports.createUser = (req, res, next) => {
   // }
   
   let fetchedUser;
+  // console.log(req.body.email,req.body.password );
   UserDB.findOne({ email: req.body.email })
     .then(user => {
       console.log('hit login');
+      console.log(user);
       if (!user) {
+        console.log('no user');
         return res.status(401).json({
           message: "Auth failed"
         });
       }
       fetchedUser = user;
-      return bcrypt.compare(req.body.password, user.password);
+      console.log(user.password);
+      return bcrypt.compare(req.body.password, user.hash);
     })
     .then(result => {
-      console.log('failed--');
+      console.log('pass--');
       if (!result) {
         return res.status(401).json({
           message: "Auth failed"
@@ -88,7 +92,7 @@ exports.createUser = (req, res, next) => {
       }
       const token = jwt.sign(
         { email: fetchedUser.email},
-        "secret_this_should_be_longer_containigmanysymbolsand12437284845numbers!#$@$%^%&*&(()",
+        "secret_this_should_be_longer_containigmanysymbolsandsfdtkvy uyuiy uyij",
         { expiresIn: "1h" }
       );
       res.status(200).json({
@@ -99,7 +103,7 @@ exports.createUser = (req, res, next) => {
       // res.redirect('/');
     })
     .catch(err => {
-      console.log('auth error');
+      console.log('auth error',err);
       return res.status(401).json({
         message: "Invalid authentication credentials!"
       });

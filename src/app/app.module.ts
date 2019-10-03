@@ -34,11 +34,11 @@ import { SuperheroescakesComponent } from './birthdaycakes/superheroes/super.com
 import { CakeformComponent } from './cakeform/cakeform.component';
 
 
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireAuthModule} from 'angularfire2/auth';
-import { environment } from 'src/environments/environment';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import {AngularFireModule} from '@angular/fire';
+// import {AngularFirestoreModule} from '@angular/fire/firestore';
+// import {AngularFireAuthModule} from 'angularfire2/auth';
+// import { environment } from 'src/environments/environment';
 import { AdminComponent } from './admin/admin.component';
 import { NewsregComponent } from './newsregister/newsreg.component';
 import { CakescategoryregComponent } from './cakecategory/cakecategoryreg.component';
@@ -87,10 +87,10 @@ import { CakesregComponent } from './cakereg/cakereg.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    AngularFireModule.initializeApp(environment.firebase),
-      AngularFireAuthModule,
-      AngularFirestoreModule,
-      AngularFireDatabaseModule
+    // AngularFireModule.initializeApp(environment.firebase),
+    //   AngularFireAuthModule,
+    //   AngularFirestoreModule,
+    //   AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
