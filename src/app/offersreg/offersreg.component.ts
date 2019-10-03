@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
     selector: 'app-offersreg',
@@ -14,7 +14,12 @@ export class OffersregComponent implements OnInit {
     ngOnInit() {}
 
     Offersreg(form: NgForm) {
-        this.http.get('http://localhost:3000/api/user/offersregister').subscribe(() => {
+      const payload = new HttpParams()
+      .set('Heading', form.value.heading)
+      .set('Subheading', form.value.subheading )
+      .set('Text', form.value.content )
+      .set('image', form.value.image);
+      this.http.post('http://localhost:3000/api/user/offersregister', payload).subscribe(() => {
             console.log('news runing');
           }, error => {
             console.log(error);
