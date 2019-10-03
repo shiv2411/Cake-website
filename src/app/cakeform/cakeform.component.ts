@@ -29,12 +29,12 @@ export class CakeformComponent implements OnInit {
     if (form.valid) {
         const data: CakeformData = {
             size: form.value.size,
-            spongetype: form.value.spongetype,
+            spongetype: form.value.sponge,
             cream: form.value.cream,
-            egg_or_eggless: form.value.egg_or_eggless,
-            cake_filler: form.value.cake_filler,
+            egg_or_eggless: form.value.egg,
+            cake_filler: form.value.cakefiller,
             message: form.value.message,
-            message_color: form.value.message_color
+            message_color: form.value.messagecolor
         };
         this.firebaseService.addmessage(data).then(res => {
             form.reset();

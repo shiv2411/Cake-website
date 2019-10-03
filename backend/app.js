@@ -10,7 +10,9 @@ const NewsModel = mongoose.model("News");
 const CategoryModel = mongoose.model("Category");
 const errorHandler = require('./helpers/error-handlers');
 var cors = require('cors');
-app.use(cors());
+app.use(cors({
+  Origin:'http://localhost:4200/'
+}));
 
 const userRoutes = require("./routes/routers");
 

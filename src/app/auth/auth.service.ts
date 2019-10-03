@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+
 import { LoginData } from './login/login.model';
 import { SignupData } from './signup/signup.model';
 
@@ -32,10 +33,15 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(fname: string, lname: string, emal: string, pass: string, cpass: string) {
-    const authData: SignupData = { firstname: fname, lastname: lname, email: emal, password: pass, cpassword: cpass };
-    this.http
-      .post('http://localhost:3000/api/user/register', authData)
+  createUser(fname: string, lname: string, email: string, pass: string, cpass: string) {
+    // const authData: SignupData = { firstname: fname, lastname: lname, email: emal, password: pass, cpassword: cpass };
+    const payload = new HttpParams()
+    .set('fname', fname)
+    .set('lname', lname)
+    .set('email', email)
+    .set('password', pass)
+      this.http
+      .post('http://localhost:3000/api/user/register', payload)
       .subscribe(() => {
         this.router.navigate(['/']);
       }, error => {
@@ -44,11 +50,14 @@ export class AuthService {
   }
 
   login(emal: string, pass: string) {
-    const authData: LoginData = { email: emal, password: pass };
+    // const authData: LoginData = { email: emal, password: pass };
+    const payload = new HttpParams()
+    .set('email', emal)
+    .set('password', pass)
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
-        'http://localhost:3000/api/user/auth',
-        authData
+        'http://localhost:3000/api/user/login',
+        payload
       )
       .subscribe(response => {
         const token = response.token;

@@ -6,19 +6,19 @@ import { ActivatedRoute } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 
 export class FirebaseService {
-  // public blog: Array<any> = [];
+  public fdata: Array<any> = [];
 
   constructor(public db: AngularFirestore,
               private fs: FirebaseService,
               private route: ActivatedRoute ) {
-      // db.collection('/cakeformdetails').valueChanges()
-      //   .subscribe(res => {
-      //     this.blog = res.map(x => x);
-      //     console.log(this.blog);
-      //   });
+      db.collection('/cakeformdetails').valueChanges()
+        .subscribe(res => {
+          this.fdata = res.map(x => x);
+          // console.log(this.fdata);
+        });
       }
   addmessage(data) {
-    console.log(data);
+    // console.log(data);
     return new Promise<any>((resolve, reject) => {
       this.db.collection('cakeformdetails')
       .add(data)

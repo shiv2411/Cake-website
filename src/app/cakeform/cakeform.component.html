@@ -6,46 +6,70 @@
       <hr>
       <div class="row" style="margin-top: 5%;">
           <label for="textInput">How many people do you need to serve? What size cake do you need?</label>
-          <select class="browser-default custom-select mb-8" id="select" name="size">
+          <select 
+          class="browser-default custom-select mb-8"
+          id="select" 
+          name="size"
+          matInput
+          ngModel
+          #sizeInput= "ngModel">
             <option value="" disabled="" selected="">Select Size</option>
-            <option value="1">8'' x 12''  80 - 120 Portion*  <strong style="color: red;">£220</strong></option>
-            <option value="2">10'' x 14''	120 - 160 Portion*	<strong style="color:red;">£270</strong></option>
+            <option value="8'' x 12'' ">8'' x 12''  80 - 120 Portion*  <strong style="color: red;">£220</strong></option>
+            <option value="10'' x 14''	">10'' x 14''	120 - 160 Portion*	<strong style="color:red;">£270</strong></option>
           </select>
       </div>
 
       <div class="row" style="margin-top: 5%;">
         <label for="textInput">Do you want vanilla or chocolate sponge?</label>
-        <select class="browser-default custom-select mb-8" id="select" name="sponge type">
+        <select class="browser-default custom-select mb-8" 
+                id="select"
+                name="sponge"
+                matInput
+                ngModel
+                #spongeType= "ngModel">
           <option value="" disabled="" selected="">Select Sponge</option>
-          <option value="1">	Vanila Sponge Cake</option>
-          <option value="2">Chocolate Sponge Cake<strong style="color:red;">(+ £10)</strong></option>
+          <option value="vanila sponge cake">	Vanila Sponge Cake</option>
+          <option value="chocolate sponge cake">Chocolate Sponge Cake<strong style="color:red;">(+ £10)</strong></option>
         </select>
     </div>
 
     <div class="row" style="margin-top: 5%;">
       <label for="textInput">Do you want vanilla or chocolate Cream?</label>
-      <select class="browser-default custom-select mb-8" id="select" name="cream">
+      <select class="browser-default custom-select mb-8" id="select" 
+              name="cream" 
+              matInput
+              ngModel  
+              #creamType= "ngModel"  >
         <option value="" disabled="" selected="">Select Cream</option>
-        <option value="1">Vanilla Cream</option>
-        <option value="2">Chocolate Cream</option>
+        <option value="vanilla cream">Vanilla Cream</option>
+        <option value="chocolate cream">Chocolate Cream</option>
       </select>
   </div>
 
   <div class="row" style="margin-top: 5%;">
     <label for="textInput">Do you want your cake to contain eggs?</label>
-    <select class="browser-default custom-select mb-8" id="select" name="egg or eggless">
+    <select class="browser-default custom-select mb-8" 
+            id="select" 
+            name="egg"
+            matInput
+            ngModel  
+            #eggoreggless= "ngModel" >
       <option value="" disabled="" selected="">Select Egg</option>
-      <option value="1"> Eggless</option>
-      <option value="2">With Eggs</option>
+      <option value="Eggless"> Eggless</option>
+      <option value="with egg">With Eggs</option>
     </select>
 </div>
 
 <div class="row" style="margin-top: 5%;">
   <label for="textInput">What filling do you want inside your cake?</label>
-  <select class="browser-default custom-select mb-8" id="select" name="cake filler">
+  <select class="browser-default custom-select mb-8" 
+          id="select" name="cakefiller"
+          matInput
+          ngModel  
+          #cakeFiller= "ngModel" >
     <option value="" disabled="" selected="">Select Cake Filler</option>
-    <option value="1">Mixed Fruit Jam</option>
-    <option value="2">White Butter Cream</option>
+    <option value="mixed fruit jam">Mixed Fruit Jam</option>
+    <option value="white butter cream">White Butter Cream</option>
   </select>
 </div>
 
@@ -54,18 +78,28 @@
   <h6>If you do not want a message, please leave below box empty. We will decorate the cake with your chosen toppings (No Extra Charge).
     The message on the cake will be written in the same colour as the colour of the ribbon chosen above.</h6>
     Type the message: 
-    <input type="text" style="width:800px;border:1px solid black;" name="message">
+    <input type="text" 
+            style="width:800px;border:1px solid black;" 
+            name="message"
+            matInput
+            ngModel  
+            #msg= "ngModel">
 </div> 
 
 <div class="row" style="margin-top: 5%;">
     <label for="textInput">What colour writing do you want?</label>
-    <select class="browser-default custom-select mb-8" id="select" name="message color">
+    <select class="browser-default custom-select mb-8" 
+            id="select" 
+            name="messagecolor"
+            matInput
+            ngModel  
+            #msgcolor= "ngModel" >
       <option value="" disabled="" selected="">Select Colour</option>
-      <option value="1">Blue</option>
-      <option value="2">Brown</option>
-      <option value="3">Gold</option>
-      <option value="4">Light Green</option>
-      <option value="5">Green</option>
+      <option value="blue">Blue</option>
+      <option value="brown">Brown</option>
+      <option value="gold">Gold</option>
+      <option value="light green">Light Green</option>
+      <option value="green">Green</option>
     </select>
   </div>
   
