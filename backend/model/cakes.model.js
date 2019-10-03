@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const schema = new Schema({
     Category: { type: String },
 	SubCategory: { type: String },
-	Type:{type:String},
+	Text:{type:String},
 	Shape: { type: String },
     Name: { type: String },
     Price: { type: String },
