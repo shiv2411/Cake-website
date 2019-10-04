@@ -44,6 +44,48 @@ import { NewsregComponent } from './newsregister/newsreg.component';
 import { CakescategoryregComponent } from './cakecategory/cakecategoryreg.component';
 import { OffersregComponent } from './offersreg/offersreg.component';
 import { CakesregComponent } from './cakereg/cakereg.component';
+import { WeddingComponent } from './ourcakes/wedding/wedding.component';
+import { MothersDayComponent } from './ourcakes/mohersday/mothers.component';
+import { FathersDayComponent } from './ourcakes/fathersday/fathers.component';
+import { CorporateComponent } from './ourcakes/corporate/corporate.component';
+import { AdultsComponent } from './ourcakes/adult/adult.component';
+import { NewYearComponent } from './ourcakes/newyear/newyear.component';
+import { ValentinesDayComponent } from './ourcakes/valentinesday/valentinesday.component';
+import { AnniversaryComponent } from './ourcakes/anniversary/anniversary.component';
+import { CartooncharcakesComponent } from './birthdaycakes/cartoonchar/cartoonchar.component';
+import { JamesBondcakesComponent } from './birthdaycakes/jamesbond/jamesbond.component';
+import { Birthday1st25th50thComponent } from './birthdaycakes/1st25th50thbday/1st_25th_50th.component';
+import { DisneyPrincesscakesComponent } from './birthdaycakes/disneyprincess/disneyprincess.component';
+import { CameracakesComponent } from './birthdaycakes/cameracake/cameracake.component';
+import { HarwaretoolcakesComponent } from './birthdaycakes/hardwaretool/harwaretool.component';
+import { CrowntiaracakesComponent } from './birthdaycakes/crown_tiara/crown_tiara.component';
+import { VideogamecakesComponent } from './birthdaycakes/videogames/videogames.component';
+import { HousewarmingcakesComponent } from './specialcakes/house_warming/house_warming.component';
+import { EastercakesComponent } from './specialcakes/easter/easter.component';
+import { ChristmascakesComponent } from './specialcakes/christmas/christmas.component';
+import { BaptismcakesComponent } from './specialcakes/baptism/baptism.component';
+import { GenderrevcakesComponent } from './specialcakes/gender_reveal/genderrev.component';
+import { GraduationcakesComponent } from './specialcakes/graduation/graduation.component';
+import { CorporatecakesComponent } from './corporatecakes/corporatecakes.component';
+import { PersonalizedcakesComponent } from './personalizedcakes/personalizedcakes.component';
+import { WatchbrandscakesComponent } from './corporatecakes/watch_brands/watchbrands.component';
+import { BoatcakesComponent } from './corporatecakes/boat/boat.component';
+import { SafaejunglecakesComponent } from './corporatecakes/safai_jungle/safaejungle.component';
+import { PokercasinocakesComponent } from './corporatecakes/poker_casino/pokercasino.component';
+import { ReligiousthemecakesComponent } from './corporatecakes/religious_theme/religioustheme.component';
+import { DoctorcakesComponent } from './corporatecakes/doctor/doctor.component';
+import { LawyercakesComponent } from './corporatecakes/lawyer/lawyer.component';
+import { MusiceqcakesComponent } from './corporatecakes/music_equipment/musiceq.component';
+import { FootballclubscakesComponent } from './corporatecakes/football_clubs/footballclubs.component';
+import { ComicthemecakesComponent } from './personalizedcakes/comic_theme/comictheme.component';
+import { NumbershapedcakesComponent } from './personalizedcakes/number_shaped/numbershaped.component';
+import { DogshapedcakesComponent } from './personalizedcakes/dog_shaped/dogshaped.component';
+import { AlcoholthemecakesComponent } from './personalizedcakes/alcohol_theme/alcoholtheme.component';
+import { Formula1cakesComponent } from './sportscakes/formula_1/formula1.component';
+import { GolfcakesComponent } from './sportscakes/golf/golf.component';
+import { JerseyshapedcakesComponent } from './sportscakes/Jersey_shaped/jerseyshaped.component';
+import { OthersportsandgamescakesComponent } from './sportscakes/Other_Sports_and_games/othersportsandgames.component';
+import { TenniscakesComponent } from './sportscakes/tennis/tennis.component';
 
 @NgModule({
   declarations: [
@@ -59,14 +101,62 @@ import { CakesregComponent } from './cakereg/cakereg.component';
     SignupComponent,
     AdminComponent,
     BirthdaycakesComponent,
+    CartooncharcakesComponent,
+    JamesBondcakesComponent,
+    Birthday1st25th50thComponent,
+    DisneyPrincesscakesComponent,
+    CameracakesComponent,
+    HarwaretoolcakesComponent,
+    CrowntiaracakesComponent,
+    VideogamecakesComponent,
+
+    CorporatecakesComponent,
+    WatchbrandscakesComponent,
+    BoatcakesComponent,
+    SafaejunglecakesComponent,
+    PokercasinocakesComponent,
+    ReligiousthemecakesComponent,
+    DoctorcakesComponent,
+    LawyercakesComponent,
+    MusiceqcakesComponent,
+    FootballclubscakesComponent,
+
+    PersonalizedcakesComponent,
+    ComicthemecakesComponent,
+    NumbershapedcakesComponent,
+    DogshapedcakesComponent,
+    AlcoholthemecakesComponent,
+
     SportscakesComponent,
-    OurcakesComponent,
-    AllcakesComponent,
-    SpecialcakesComponent,
-    CakeformComponent,
+    Formula1cakesComponent,
+    GolfcakesComponent,
+    JerseyshapedcakesComponent,
+    OthersportsandgamescakesComponent,
+    TenniscakesComponent,
     GymcakesComponent,
     FootballcakesComponent,
+
+    OurcakesComponent,
     BabyshowerComponent,
+    WeddingComponent,
+    MothersDayComponent,
+    FathersDayComponent,
+    CorporateComponent,
+    AdultsComponent,
+    NewYearComponent,
+    ValentinesDayComponent,
+    AnniversaryComponent,
+
+    SpecialcakesComponent,
+    AllcakesComponent,
+    HousewarmingcakesComponent,
+    EastercakesComponent,
+    ChristmascakesComponent,
+    BaptismcakesComponent,
+    GenderrevcakesComponent,
+    GraduationcakesComponent,
+
+    CakeformComponent,
     SuperheroescakesComponent,
     OffersregComponent,
     NewsregComponent,
