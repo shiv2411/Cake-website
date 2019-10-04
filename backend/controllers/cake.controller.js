@@ -1,4 +1,4 @@
-﻿const express = require('express');
+const express = require('express');
 const router = express.Router();
 const connection = require("../model/index");
 const app = express();
@@ -8,7 +8,7 @@ const Cakes = connection.Cakes;
 var fs = require('fs');
 var mv = require('mv');
 var formidable = require('formidable');
-var upload_path = "./Images/";
+var upload_path = "./Images/cakes/";
 const multiparty = require('multiparty');
 
 
@@ -23,34 +23,28 @@ router.post('/cakesregister', app.post("/cakesregister", (req, res) => {
     //console.log(req.body);
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
-        console.log(fields.text)
+        // console.log(fields)
         // oldpath : temporary folder to which file is saved to
         var oldpath = files.image.path;
         var newpath = upload_path + files.image.name;
-        console.log(files.image.type)
+        // console.log(files.image.type)
         // copy the file to a new location
         mv(oldpath, newpath, function (err) {
             if (err) throw err;
             // you may respond with another html page
 
-            console.log(newpath)
+            // console.log(newpath)
 
-
-            var cakes = new CakesModel();
-            cakes.Category = fields.category;
-            cakes.SubCategory = fields.subcategory;
-            cakes.Text = fields.text;
-            cakes.Image = newpath;
-            cakes.Shape = fields.shape;
-            cakes.Price = fields.price;
-            cakes.Type = fields.type;
-           // console.log(cakes.json);
-            cakes.save();
-
-            
+            var cakecategory = new CakesModel();
+            cakecategory.Heading = fields.Heading;
+            cakecategory.Subheading = fields.Subheading;
+            cakecategory.Text = fields.Text;
+            cakecategory.image = newpath;
+            cakecategory.save();
+            res.send("cakecategory Registered Successfully");
 
         })
-    })
+    });
 }));
 
 

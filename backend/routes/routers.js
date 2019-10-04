@@ -3,8 +3,9 @@ const router = express.Router();
 
 const UserController = require("../controllers/users.controller");
 const NewsController = require("../controllers/news.controller");
-const CakesController = require("../controllers/cakes.controller");
+// const CakesCategoryController = require("../controllers/cakescatreg.controller");
 const OffersController = require("../controllers/offers.controller");
+const CakesController = require("../controllers/cake.controller");
 
 
 //routes
@@ -15,6 +16,8 @@ router.post("/register", UserController.createUser);
 router.post("/login", UserController.userLogin);
 
 router.post("/newsregister", NewsController);
+
+// router.post("/cakescatregister", CakesCategoryController);
 
 router.post("/cakesregister", CakesController);
 

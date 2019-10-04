@@ -5,6 +5,12 @@ const app = express();
 const mongoose = require("mongoose");
 const OffersModel = mongoose.model("Offers");
 const Offers = connection.Offers;
+var fs = require('fs');
+var mv = require('mv');
+var formidable = require('formidable');
+var upload_path = "./Images/offers/";
+const multiparty = require('multiparty');
+
 
 
 
@@ -18,18 +24,38 @@ router.get("/getall",function(req,res){
 
 
 
-
-
-
 router.post('/offersregister', app.post("/offersregister", (req, res) => {
-    console.log(req.body);
-    var offers = new OffersModel();
-    offers.Heading = req.body.heading;
-    offers.Subheading = req.body.subheading;
-    offers.Text = req.body.text;
-    offers.image = req.body.image;
-    offers.save();
-    res.send("Offers Registered Successfully");
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        console.log(fields)
+        // oldpath : temporary folder to which file is saved to
+        var oldpath = files.image.path;
+        var newpath = upload_path + files.image.name;
+
+        // copy the file to a new location
+        mv(oldpath, newpath, function (err) {
+            if (err) throw err;
+            // you may respond with another html page
+
+            // console.log(newpath)
+            var offers = new OffersModel();
+            offers.Heading = fields.Heading;
+            offers.Subheading = fields.Subheading;
+            offers.Text = fields.Text;
+            offers.image = newpath;
+            offers.save();
+            res.send("offers Registered Successfully");
+
+        })
+    });
+    // console.log(req.body);
+    // var offers = new OffersModel();
+    // offers.Heading = req.body.heading;
+    // offers.Subheading = req.body.subheading;
+    // offers.Text = req.body.text;
+    // offers.image = req.body.image;
+    // offers.save();
+    // res.send("Offers Registered Successfully");
 
 }));
 /*router.post('/register', register);

@@ -9,36 +9,36 @@
           <mat-form-field>
             <input type="text"
                     matInput
-                    name="category"
+                    name="heading"
                     ngModel
-                    placeholder="Category"
+                    placeholder="Offer's Heading"
                     #head= "ngModel" required>
-            <mat-error *ngIf="head.invalid">Please Enter category's name!</mat-error>
+            <mat-error *ngIf="head.invalid">Please Enter offer's heading!</mat-error>
           </mat-form-field> <br> <br>
 
           <mat-form-field>
               <input type="text"
                       matInput
-                      name="name"
+                      name="subheading"
                       ngModel
-                      placeholder="Cake's Name"
+                      placeholder="Subheading(if any)"
                       #subhead= "ngModel">
-              <mat-error *ngIf="subhead.invalid">Please Enter the cake name!</mat-error>
+              <mat-error *ngIf="subhead.invalid">Please Enter the subheading!</mat-error>
             </mat-form-field> <br><br>
 
             <mat-form-field>
                 <input type="text"
                         matInput
-                        name="price"
+                        name="content"
                         ngModel
-                        placeholder="Price"
+                        placeholder="Offer's Description"
                         #head= "ngModel" required>
-                <mat-error *ngIf="head.invalid">Please Enter the cake's price!</mat-error>
+                <mat-error *ngIf="head.invalid">Please Enter the offer's content!</mat-error>
               </mat-form-field> <br> <br>
 
-              <div class="img">
-                <h6>Please choose your cake's image file</h6>
-                <input type="file" name="image">
+              <div class="img" >
+                <h6>Please choose your image file</h6>
+                <input type="file" name="image" (change)="selectedImage($event)">
               </div> <br> <br>
 
             <div class="butn">

@@ -66,9 +66,9 @@
                 <mat-error *ngIf="head.invalid">Please Enter the cake's price!</mat-error>
               </mat-form-field> <br> <br>
 
-              <div class="img">
-                <h6>Please choose your cake's image file</h6>
-                <input type="file" name="image">
+              <div class="img" >
+                <h6>Please choose your image file</h6>
+                <input type="file" name="image" (change)="selectedImage($event)">
               </div> <br> <br>
 
             <div class="butn">

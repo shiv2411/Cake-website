@@ -36,9 +36,9 @@
                 <mat-error *ngIf="head.invalid">Please Enter the News Content!</mat-error>
               </mat-form-field> <br> <br>
 
-              <div class="img">
+              <div class="img" >
                 <h6>Please choose your image file</h6>
-                <input type="file" name="image">
+                <input type="file" name="image" (change)="selectedImage($event)">
               </div> <br> <br>
 
             <div class="butn">

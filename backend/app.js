@@ -28,7 +28,7 @@ app.listen("3000", () => {
 );
 app.use('/news', require('./controllers/news.controller'));
 app.use('/offers', require('./controllers/offers.controller'));
-app.use('/cakes', require('./controllers/cakes.controller'));
+app.use('/cakes', require('./controllers/cake.controller'));
 app.use(session({
     secret: 'k344kk44k4k4h44',
     resave: true,

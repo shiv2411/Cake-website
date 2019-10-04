@@ -5,19 +5,51 @@ const app = express();
 const mongoose = require("mongoose");
 const NewsModel = mongoose.model("News");
 const News = connection.News;
+var fs = require('fs');
+var mv = require('mv');
+var formidable = require('formidable');
+var upload_path = "./Images/news/";
+const multiparty = require('multiparty');
 
 // routes
-router.post('/newsregister', app.post("/newsregister", (req, res) => {
-    console.log(req.body);
-    var news = new NewsModel();
-    news.Heading = req.body.heading;
-    news.Subheading = req.body.subheading;
-    news.Text = req.body.text;
-    news.image = req.body.image;
-    news.save();
-    res.send("News Registered Successfully");
+// router.post('/newsregister', app.post("/newsregister", (req, res) => {
+//     console.log(req.body);
+//     var news = new NewsModel();
+//     news.Heading = req.body.heading;
+//     news.Subheading = req.body.subheading;
+//     news.Text = req.body.text;
+//     news.image = req.body.image;
+//     news.save();
+//     res.send("News Registered Successfully");
 
-}));
+// }));
+
+router.post('/newsregister', app.post("/newsregister", (req, res) => {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function (err, fields, files) {
+        // console.log(fields)
+        // oldpath : temporary folder to which file is saved to
+        var oldpath = files.image.path;
+        var newpath = upload_path + files.image.name;
+        // console.log(files.image.type)
+        // copy the file to a new location
+        mv(oldpath, newpath, function (err) {
+            if (err) throw err;
+            // you may respond with another html page
+
+            // console.log(newpath)
+
+            var news = new NewsModel();
+            news.Heading = fields.Heading;
+            news.Subheading = fields.Subheading;
+            news.Text = fields.Text;
+            news.image = newpath;
+            news.save();
+            res.send("News Registered Successfully");
+
+        })
+    });
+}))
 /*router.post('/register', register);
 router.get('/', getAll);
 router.get('/current', getCurrent);

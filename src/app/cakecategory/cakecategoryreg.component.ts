@@ -11,16 +11,25 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class CakescategoryregComponent implements OnInit {
 
     constructor(public http: HttpClient) {}
+    selectedFile: File = null;
     ngOnInit() {}
 
+    selectedImage(event) {
+      // console.log(event);
+      if (event.target.files.length > 0) {
+         this.selectedFile = event.target.files[0] as File;
+
+        }
+    }
+
     Cakesreg(form: NgForm) {
-        const payload = new HttpParams()
-        .set('Category', form.value.category)
-        .set('Name', form.value.name )
-        .set('Price', form.value.price )
-        .set('image', form.value.image);
-        this.http.post('http://localhost:3000/api/user/cakesregister', payload).subscribe(() => {
-            console.log('news runing');
+        const cakecatdata = new FormData();
+        cakecatdata.append('Category', form.value.category);
+        cakecatdata.append('Name', form.value.name );
+        cakecatdata.append('Price', form.value.price );
+        cakecatdata.append('image', this.selectedFile, this.selectedFile.name);
+        this.http.post('http://localhost:3000/api/user//cakesregister', cakecatdata).subscribe(() => {
+            // console.log('news runing');
           }, error => {
             console.log(error);
           });
