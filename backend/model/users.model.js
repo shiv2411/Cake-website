@@ -13,4 +13,4 @@ const schema = mongoose.Schema({
 // schema.set('toJSON', { virtuals: true });
 schema.plugin(uniqueValidator);
 
-module.exports = mongoose.model('User', schema);
+module.exports = mongoose.model('User', schema, 'User');

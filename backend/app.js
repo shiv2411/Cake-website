@@ -8,6 +8,7 @@ const app = express();
 const UserModel = mongoose.model("User");
 const NewsModel = mongoose.model("News");
 const CategoryModel = mongoose.model("Category");
+const PlaceOrderModel = mongoose.model("PlaceOrder");
 const errorHandler = require('./helpers/error-handlers');
 var cors = require('cors');
 
@@ -29,6 +30,7 @@ app.listen("3000", () => {
 app.use('/news', require('./controllers/news.controller'));
 app.use('/offers', require('./controllers/offers.controller'));
 app.use('/cakes', require('./controllers/cake.controller'));
+app.use('/order', require('./controllers/order.controller'));
 app.use(session({
     secret: 'k344kk44k4k4h44',
     resave: true,
