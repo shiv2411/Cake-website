@@ -18,6 +18,14 @@ router.get("/getall", function (req, res) {
         .catch(err => res.status(500).json(" Server Error"))
 })
 
+router.get("/getcakebycategory", function (req, res) {
+    console.log(req.body)
+    CakesModel.find({Category:req.body.Category,
+                    SubCategory:req.body.SubCategory
+    }).then(list => res.json(list))
+        .catch(err => res.status(500).json(" Server Error"))
+})
+
 
 router.post('/cakesregister', app.post("/cakesregister", (req, res) => {
     //console.log(req.body);
@@ -25,8 +33,8 @@ router.post('/cakesregister', app.post("/cakesregister", (req, res) => {
     form.parse(req, function (err, fields, files) {
         // console.log(fields)
         // oldpath : temporary folder to which file is saved to
-        var oldpath = files.image.path;
-        var newpath = upload_path + files.image.name;
+        var oldpath = files.Image.path;
+        var newpath = upload_path + ''+new Date().getMilliseconds()+files.Image.name;
         // console.log(files.image.type)
         // copy the file to a new location
         mv(oldpath, newpath, function (err) {
@@ -36,10 +44,13 @@ router.post('/cakesregister', app.post("/cakesregister", (req, res) => {
             // console.log(newpath)
 
             var cakecategory = new CakesModel();
-            cakecategory.Heading = fields.Heading;
-            cakecategory.Subheading = fields.Subheading;
+            cakecategory.Category= fields.Category;
+            cakecategory.SubCategory = fields.SubCategory;
             cakecategory.Text = fields.Text;
-            cakecategory.image = newpath;
+            cakecategory.Shape = fields.Shape;
+            cakecategory.Name = fields.Name;
+            cakecategory.Price = fields.Price;
+            cakecategory.Image = newpath;
             cakecategory.save();
             res.send("cakecategory Registered Successfully");
 

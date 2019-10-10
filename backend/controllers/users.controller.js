@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
+var randomNumberID='9';
 
 // const UserModel = require("../model/users.model");
 const UserDB = mongoose.model("User");
@@ -16,13 +17,16 @@ exports.createUser = (req, res, next) => {
 
     // newuser.save();
     // res.send("User Registered Successfully");
+    var now=new Date();
+    var calculated=randomNumberID+''+now.getHours()+''+now.getMilliseconds();
     bcrypt.hash(req.body.password, 10).then(hash =>{
         console.log(req.body);
         var newuser = new UserDB({
         firstName:req.body.fname,
         lastName: req.body.lname,
         email: req.body.email,
-        hash: hash
+        hash: hash,
+        userId:calculated
     });
     newuser.save()
     .then(result => {
@@ -95,6 +99,7 @@ exports.createUser = (req, res, next) => {
         "secret_this_should_be_longer_containigmanysymbolsandsfdtkvy uyuiy uyij",
         { expiresIn: "1h" }
       );
+      console.log(token)
       res.status(200).json({
         token: token,
         expiresIn: 3600,
